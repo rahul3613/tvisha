@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:wght@300&family=Staatliches&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+$red: #a03b4b;
+$blue: #000421;
+$blue-dark: #000316;
+$red-to-transparent: linear-gradient($red, #a03b4ca0);
+$transparent-to-red: linear-gradient(#0000, $red);
+
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $blue;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+}
+
+body {
+    font-family: 'Roboto Condensed', 'Staatliches', sans-serif;
+    background: $blue;
+    color: #fff;
+    font-size: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+nav {
+    position: fixed;
+    background: linear-gradient($blue, #0000);
+    width: 100%;
+    display: flex;
+    font-family: 'Staatliches';
+    justify-content: space-around;
+    padding: 2rem 0;
+    z-index: 2;
+
+    ul {
+        display: flex;
+
+        li {
+            margin: 5px 20px;
+            list-style: none;
+        }
+    }
+
+    .nav-link {
+        position: relative;
+    }
+
+    .nav-link:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: #fff;
+        transition: width .1s ease-in;
+    }
+
+    .nav-link:hover:after {
+        width: 100%;
+    }
+}
+
+a.btn {
+    position: relative;
+    font-family: 'Staatliches';
+
+    &:after {
+        content: '';
+        position: absolute;
+    }
+
+    &.btn-primary {
+        border: 4px solid $red;
+        padding: 1rem 1.5rem;
+        margin: 2rem 0;
+        font-size: 1.7rem;
+        overflow: hidden;
+        display: inline-block;
+    }
+
+    &.btn-primary:after {
+        top: 0;
+        left: -100%;
+        height: 100%;
+        width: 100%;
+        background: $red;
+        z-index: -1;
+        transition: left .2s ease-in;
+    }
+
+    &.btn-primary:hover:after {
+        left: 0;
+    }
+
+    &.btn-secondary {
+        // padding: 5px 10px;
+        transition: background .1s ease-in;
+    }
+
+    &.btn-secondary:after {
+        top: 100%;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: #fff;
+        transition: width .1s ease-in;
+    }
+
+    &.btn-secondary:hover:after {
+        width: 100%;
+    }
+}
+
+@font-face {
+    font-family: 'Plotwist';
+    src: url(../fonts/plotwist.ttf) format('woff2');
+}
+
+header {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Staatliches';
+    justify-content: center;
+
+    .container {
+        text-align: center;
+
+        H1 {
+            font-weight: 400;
+            font-family: 'Plotwist', sans-serif;
+            font-size: 12rem;
+            margin-top: 5rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
+
+        p.dates {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+
+
+section {
+    padding: 5rem 0;
+
+    h2 {
+        all: unset;
+        font-size: 6rem;
+        font-family: 'Plotwist', sans-serif;
+        margin-bottom: 30px;
+    }
+}
+
+#about {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Poppins', 'Staatliches';
+
+    .content {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+#sponsors {
+    display: flex;
+    justify-content: center;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 75%;
+
+        a {
+            font-family: 'Staatliches';
+        }
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        background: $red;
+        margin: 1rem 1rem;
+
+        .card-title {
+            padding: .5rem 1rem;
+            font-size: 1.6rem;
+            font-family: 'Staatliches';
+        }
+    }
+}
+
+#events {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        width: 70%;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        .card {
+            position: relative;
+            width: 50%;
+            height: 300px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: all .1s ease-in-out;
+            }
+
+            .card-body {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 20px;
+                transform: translateY(-60px);
+                transition: all .1s ease-in-out;
+            }
+
+            .card-title {
+                font-family: 'Staatliches';
+                font-weight: 400;
+                font-size: 1.8rem;
+            }
+
+            .card-text {
+                margin-bottom: 20px;
+            }
+        }
+
+        .card:hover {
+            img {
+                filter: blur(2px);
+                transform: scale(1.1);
+
+            }
+
+            .card-body {
+                background: $transparent-to-red;
+                transform: translateY(-100%);
+            }
+        }
+    }
+}
+
+
+#contact {
+    background: $blue-dark;
+
+}
+
+footer {
+    background: #000210;
+    padding: 1rem;
+}
+
+@media (max-width: 1100px) and (min-width: 560px) {
+    #about {
+        .content {
+            width: 80%;
+        }
+    }
+
+    #events {
+        .container {
+            width: 90%;
+        }
+    }
+
+    #sponsors {
+        .container {
+            width: 90%;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    nav {
+        .navbar-brand {
+            display: none;
+        }
+
+        ul {
+            li {
+                margin: 5px 5px;
+            }
+        }
+    }
+}
+
+@media (max-width: 560px) {
+    #about {
+        .content {
+            width: 95%;
+        }
+    }
+
+    #events {
+        .container {
+            width: 100%;
+        }
+
+        .row {
+            .card {
+                width: 80%;
+            }
+
+            .card-body {
+                background: $transparent-to-red;
+                transform: translateY(-100%);
+            }
+        }
+    }
+
+    #sponsors {
+        .container {
+            width: 100%;
+        }
+    }
+}
