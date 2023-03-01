@@ -10,12 +10,24 @@ html {
     scroll-behavior: smooth;
 }
 
+// colors
 $red: #a03b4b;
 $blue: #000421;
 $blue-dark: #000316;
 $red-to-transparent: linear-gradient($red, #a03b4ca0);
 $transparent-to-red: linear-gradient(#0000, $red);
 
+@font-face {
+    font-family: 'Plotwist';
+    src: url(../fonts/plotwist.ttf) format('woff2');
+}
+
+// fonts
+$headings: 'Plotwist',
+sans-serif;
+$sub-headings: 'Staatliches';
+$text: 'Poppins';
+$text-condensed: 'Roboto Condensed';
 
 #particles-js {
     position: fixed;
@@ -32,13 +44,17 @@ $transparent-to-red: linear-gradient(#0000, $red);
     overflow: hidden;
 }
 
+::selection {
+    background-color: $red;
+}
+
 a {
     all: unset;
     cursor: pointer;
 }
 
 body {
-    font-family: 'Roboto Condensed', 'Staatliches', sans-serif;
+    font-family: $sub-headings, $text-condensed;
     background: $blue;
     color: #fff;
     font-size: 20px;
@@ -46,15 +62,26 @@ body {
     position: relative;
 }
 
+h1,
+h2 {
+    font-weight: 400;
+    font-family: $headings, sans-serif;
+
+}
+
 nav {
     position: fixed;
     background: linear-gradient($blue, #0000);
     width: 100%;
     display: flex;
-    font-family: 'Staatliches';
+    font-family: $sub-headings;
     justify-content: space-around;
     padding: 2rem 0;
     z-index: 2;
+
+    .navbar-brand h2 {
+        font-family: $sub-headings;
+    }
 
     ul {
         display: flex;
@@ -67,27 +94,16 @@ nav {
 
     .nav-link {
         position: relative;
+        transition: color .1s ease-in-out;
     }
 
-    .nav-link:after {
-        content: '';
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 0;
-        height: 3px;
-        background: #fff;
-        transition: width .1s ease-in;
-    }
-
-    .nav-link:hover:after {
-        width: 100%;
+    .nav-link:hover {
+        color: $red;
     }
 }
 
 a.btn {
     position: relative;
-    font-family: 'Staatliches';
 
     &:after {
         content: '';
@@ -118,7 +134,6 @@ a.btn {
     }
 
     &.btn-secondary {
-        // padding: 5px 10px;
         transition: background .1s ease-in;
     }
 
@@ -136,26 +151,18 @@ a.btn {
     }
 }
 
-@font-face {
-    font-family: 'Plotwist';
-    src: url(../fonts/plotwist.ttf) format('woff2');
-}
-
 header {
     height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Staatliches';
     justify-content: center;
 
     .container {
         text-align: center;
 
         H1 {
-            font-weight: 400;
-            font-family: 'Plotwist', sans-serif;
             font-size: 12rem;
             margin-top: 5rem;
         }
@@ -170,15 +177,11 @@ header {
     }
 }
 
-
-
 section {
     padding: 5rem 0;
 
     h2 {
-        all: unset;
         font-size: 6rem;
-        font-family: 'Plotwist', sans-serif;
         margin-bottom: 30px;
     }
 }
@@ -187,7 +190,7 @@ section {
     display: flex;
     justify-content: center;
     text-align: center;
-    font-family: 'Poppins', 'Staatliches';
+    font-family: $text;
 
     .content {
         width: 50%;
@@ -205,10 +208,6 @@ section {
         flex-direction: column;
         align-items: center;
         width: 75%;
-
-        a {
-            font-family: 'Staatliches';
-        }
     }
 
     .row {
@@ -225,7 +224,6 @@ section {
         .card-title {
             padding: .5rem 1rem;
             font-size: 1.6rem;
-            font-family: 'Staatliches';
         }
     }
 }
@@ -277,6 +275,7 @@ section {
 
             .card-text {
                 margin-bottom: 20px;
+                font-family: $text-condensed;
             }
         }
 
@@ -295,78 +294,16 @@ section {
     }
 }
 
-
 #contact {
     background: $blue-dark;
-
+    font-family: $text-condensed;
 }
 
 footer {
     background: #000210;
     padding: 1rem;
+    color: #4f4f4f;
+    font-family: $text-condensed;
 }
 
-@media (max-width: 1100px) and (min-width: 560px) {
-    #about {
-        .content {
-            width: 80%;
-        }
-    }
-
-    #events {
-        .container {
-            width: 90%;
-        }
-    }
-
-    #sponsors {
-        .container {
-            width: 90%;
-        }
-    }
-}
-
-@media (max-width: 700px) {
-    nav {
-        .navbar-brand {
-            display: none;
-        }
-
-        ul {
-            li {
-                margin: 5px 5px;
-            }
-        }
-    }
-}
-
-@media (max-width: 560px) {
-    #about {
-        .content {
-            width: 95%;
-        }
-    }
-
-    #events {
-        .container {
-            width: 100%;
-        }
-
-        .row {
-            .card {
-                width: 80%;
-            }
-
-            .card-body {
-                background: $transparent-to-red;
-                transform: translateY(-100%);
-            }
-        }
-    }
-
-    #sponsors {
-        .container {
-            width: 100%;
-        }
-    }
-}
+@import 'responsive';

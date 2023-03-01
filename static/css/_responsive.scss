@@ -1,0 +1,94 @@
+@media (max-width: 1100px) and (min-width: 560px) {
+    #about {
+        .content {
+            width: 80%;
+        }
+    }
+
+    #events {
+        .container {
+            width: 90%;
+        }
+    }
+
+    #sponsors {
+        .container {
+            width: 90%;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    nav {
+        .navbar-brand {
+            display: none;
+        }
+
+        ul {
+            li {
+                margin: 5px 8px;
+            }
+        }
+    }
+}
+
+@media (max-width: 560px) {
+    header .container {
+        h1 {
+            font-size: 9rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+
+            &.dates {
+                font-size: 2.3rem;
+            }
+        }
+    }
+
+    #about {
+        .content {
+            width: 95%;
+            font-size: 18px;
+        }
+    }
+
+    a.btn {
+        &.btn-primary {
+            border: 3px solid $red;
+            padding: .4rem .6rem;
+            margin: 1.3rem 0;
+        }
+    }
+
+    section {
+        h2 {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+    }
+
+    #events {
+        .container {
+            width: 100%;
+        }
+
+        .row {
+            .card {
+                width: 75%;
+            }
+
+            .card-body {
+                // background: $transparent-to-red;
+                transform: translateY(-100%);
+            }
+        }
+    }
+
+    #sponsors {
+        .container {
+            width: 100%;
+        }
+    }
+}
