@@ -1,0 +1,87 @@
+@import 'base';
+
+section {
+    padding: 5rem 0;
+
+    &#events h2 {
+        font-size: 9rem;
+        margin: 50px 0 0 0;
+    }
+
+    &#contact h2 {
+        font-size: 6rem;
+        margin-bottom: 30px;
+    }
+
+    h3 {
+        font-size: 4rem;
+        margin: 5rem 0 1rem 0;
+    }
+}
+
+#events {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        width: 70%;
+
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        .card {
+            position: relative;
+            width: 50%;
+            height: 300px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: all .1s ease-in-out;
+            }
+
+            .card-body {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 20px;
+                transform: translateY(-60px);
+                transition: all .1s ease-in-out;
+            }
+
+            .card-title {
+                font-family: 'Staatliches';
+                font-weight: 400;
+                font-size: 1.8rem;
+            }
+
+            .card-text {
+                margin-bottom: 20px;
+                font-family: $text-condensed;
+            }
+        }
+
+        .card:hover {
+            img {
+                filter: blur(2px);
+                transform: scale(1.1);
+
+            }
+
+            .card-body {
+                background: $transparent-to-red;
+                transform: translateY(-100%);
+            }
+        }
+    }
+}
