@@ -134,7 +134,10 @@ a.btn {
     }
 
     &.btn-secondary {
-        transition: background .1s ease-in;
+        padding: 3px 10px;
+        border: 2px solid #fff;
+        border-radius: 3px;
+        transition: background .2s ease-in;
     }
 
     &.btn-secondary:after {
@@ -142,12 +145,12 @@ a.btn {
         left: 0;
         width: 0;
         height: 3px;
-        background: #fff;
+        background: $red;
         transition: width .1s ease-in;
     }
 
-    &.btn-secondary:hover:after {
-        width: 100%;
+    &.btn-secondary:hover {
+        background: $red;
     }
 }
 

@@ -55,14 +55,14 @@ section {
                 left: 0;
                 width: 100%;
                 padding: 20px;
-                transform: translateY(-60px);
+                transform: translateY(-70px);
                 transition: all .1s ease-in-out;
             }
 
             .card-title {
                 font-family: 'Staatliches';
                 font-weight: 400;
-                font-size: 1.8rem;
+                font-size: 2.3rem;
             }
 
             .card-text {
@@ -80,6 +80,81 @@ section {
 
             .card-body {
                 background: $transparent-to-red;
+                transform: translateY(-100%);
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) and (min-width: 560px) {
+    #events {
+        .container {
+            width: 90%;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    nav {
+        .navbar-brand {
+            display: none;
+        }
+
+        ul {
+            li {
+                font-size: 16px;
+                margin: 5px 4px;
+            }
+        }
+    }
+    #events .row .card{
+        .card-body {
+            transform: translateY(-60px);
+        }
+        .card-title {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+@media (max-width: 560px) {
+    a.btn {
+        &.btn-primary {
+            border: 3px solid $red;
+            padding: .4rem .6rem;
+            margin: 1.3rem 0;
+        }
+    }
+
+    section {
+        &#events h2 {
+            font-size: 6rem;
+            margin: 50px 0 0 0;
+        }
+
+        &#contact h2 {
+            font-size: 5rem;
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 2.3rem;
+            margin: 4rem 0 1rem 0;
+        }
+    }
+
+    #events {
+        .container {
+            width: 100%;
+        }
+
+        .row {
+            .card {
+                width: 75%;
+            }
+
+            .card-body {
                 transform: translateY(-100%);
             }
         }
