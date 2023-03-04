@@ -76,16 +76,17 @@ nav {
     display: flex;
     font-family: $sub-headings;
     justify-content: space-around;
-    padding: 2rem 0;
+    padding: 1rem 0;
     z-index: 2;
 
-    .navbar-brand h2 {
-        font-family: $sub-headings;
+    .navbar-brand img {
+        height: 100px;
+        // font-family: $sub-headings;
     }
 
     ul {
         display: flex;
-
+        margin-top: 1rem;
         li {
             margin: 5px 20px;
             list-style: none;

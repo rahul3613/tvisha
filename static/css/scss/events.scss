@@ -39,7 +39,7 @@ section {
         .card {
             position: relative;
             width: 50%;
-            height: 300px;
+            height: 350px;
             overflow: hidden;
 
             img {
@@ -152,10 +152,21 @@ section {
         .row {
             .card {
                 width: 75%;
-            }
+                margin-bottom: 20px;
+
+                img {
+                    filter: blur(1px);
+                }
+            }            
 
             .card-body {
-                transform: translateY(-100%);
+                background: $transparent-to-red;
+                transform: translateY(-100%) !important;
+            }
+
+            .card:hover img{
+                transform: scale(1);
+                filter: blur(1px);
             }
         }
     }
