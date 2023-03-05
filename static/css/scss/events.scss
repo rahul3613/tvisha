@@ -56,9 +56,11 @@ section {
                 width: 100%;
                 padding: 20px;
                 transform: translateY(-70px);
-                transition: all .1s ease-in-out;
+                background: linear-gradient( #0000 0%, $red 40%);
+                transition: background .1s ease-in-out,
+                            transform .2s ease-in-out;
             }
-
+            
             .card-title {
                 font-family: 'Staatliches';
                 font-weight: 400;
@@ -160,11 +162,12 @@ section {
             }            
 
             .card-body {
-                background: $transparent-to-red;
+                background: linear-gradient(#0000, $red 80%) !important;
                 transform: translateY(-100%) !important;
             }
 
             .card:hover img{
+                background: $transparent-to-red;
                 transform: scale(1);
                 filter: blur(1px);
             }

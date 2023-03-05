@@ -12,9 +12,14 @@ header {
     .container {
         text-align: center;
 
+        img {
+            display: none;
+            height: 100px;
+            margin-top: 5rem;
+        }
+
         H1 {
             font-size: 12rem;
-            margin-top: 5rem;
         }
 
         p {
