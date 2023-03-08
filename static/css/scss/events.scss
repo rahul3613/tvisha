@@ -27,7 +27,10 @@ section {
 
     .container {
         width: 70%;
+    }
 
+    h3 {
+        text-align: center;
     }
 
     .row {
@@ -38,9 +41,10 @@ section {
 
         .card {
             position: relative;
-            width: 50%;
-            height: 350px;
+            width: 45%;
+            height: 330px;
             overflow: hidden;
+            margin: 0 10px 20px 10px;
 
             img {
                 width: 100%;
@@ -57,8 +61,7 @@ section {
                 padding: 20px;
                 transform: translateY(-70px);
                 background: linear-gradient( #0000 0%, $red 40%);
-                transition: background .1s ease-in-out,
-                            transform .2s ease-in-out;
+                transition: all .1s ease-in-out;
             }
             
             .card-title {
@@ -92,6 +95,7 @@ section {
     #events {
         .container {
             width: 90%;
+            // .card {}
         }
     }
 }
@@ -154,7 +158,7 @@ section {
         .row {
             .card {
                 width: 75%;
-                margin-bottom: 20px;
+                margin: 0  0 20px 0;
 
                 img {
                     filter: blur(1px);

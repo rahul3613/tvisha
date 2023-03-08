@@ -11,11 +11,16 @@ header {
 
     .container {
         text-align: center;
+        position: relative;
 
         img {
-            display: none;
-            height: 100px;
-            margin-top: 5rem;
+            // display: none;
+            // position: absolute;
+            // top: 00%;
+            // left: 50%;
+            // transform: translate(-50%, -50%);
+            height: 200px;
+            margin-top: 3rem;
         }
 
         H1 {

@@ -89,7 +89,7 @@ nav {
         display: flex;
         margin-top: 1rem;
         li {
-            margin: 5px 20px;
+            margin: 15px 20px;
             list-style: none;
         }
     }
@@ -139,6 +139,7 @@ a.btn {
         padding: 3px 10px;
         border: 2px solid #fff;
         border-radius: 3px;
+        margin-right: 10px;
         transition: background .2s ease-in;
     }
 
@@ -159,13 +160,23 @@ a.btn {
 
 
 #contact {
-    background: $blue-dark;
+    background: linear-gradient(#0000, $blue-dark);
     font-family: $text-condensed;
+    a {
+        display: inline-block;
+        margin: 0 5px;
+        font-weight: bold;
+        transition: color .1s ease-in-out;
+    }
+    a:hover {
+        color: $red;
+    }
 }
 
 footer {
-    background: #000210;
+    background: $blue-dark;
     padding: 1rem;
     color: #4f4f4f;
     font-family: $text-condensed;
+
 }
